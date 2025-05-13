@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Поиск - Doroninpro.ru</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700,600" type="text/css" media="all">
+    <link rel="icon" type="image/jpeg" href="images/cropped-1376662749_doronon-1-1-32x32.jpg">
+    <style>
+        a, a:visited {
+            color: #007bff;
+        }
+        a:hover, a:focus {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="st-preloader">
+        <div id="pre-status">
+            <div class="preload-placeholder"></div>
+        </div>
+    </div>
+
+    <header id="header">
+        <div class="container">
+            <div class="text-logo pull-left">
+                <a href="index.html">Doroninpro.ru</a>
+                <p>Современная Лазерная Хиругия</p>
+            </div>
+            <div id="navigation-wrapper" class="pull-right">
+                <ul id="menu-menu-1" class="menu">
+                    <li class="menu-item"><a href="contacts/">Контакты</a></li>
+                    <li class="menu-item"><a href="articles/">Публикации</a></li>
+                </ul>
+            </div>
+            <div class="menu-mobile"></div>
+        </div>
+    </header>
+
+    <div class="st-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main" role="main">
+                            <article class="post">
+                                <div class="padding-content">
+                                    <header class="entry-header">
+                                        <h1 class="entry-title">Результаты поиска</h1>
+                                    </header>
+                                    <div class="entry-content">
+                                        <div id="search-results"></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </main>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-5">
+                    <div class="primary-sidebar widget-area" role="complementary">
+                        <aside class="widget widget_search">
+                            <h1 class="widget-title">Поиск на сайте</h1>
+                            <form role="search" method="get" id="searchform" action="search.html">
+                                <div>
+                                    <input type="text" placeholder="Search and hit enter..." name="s" id="s">
+                                </div>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-top"></div>
+            </div>
+        </div>
+        <div class="copy-right-text text-center"></div>
+    </footer>
+
+    <div class="scroll-up">
+        <a href="#"><i class="fa fa-angle-up"></i></a>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('s');
+            
+            if (searchQuery) {
+                // Здесь можно добавить логику поиска по сайту
+                const searchResults = document.getElementById('search-results');
+                searchResults.innerHTML = `<p>Поисковый запрос: "${searchQuery}"</p>`;
+            }
+        });
+
+        window.onload = function() {
+            var preloader = document.getElementById('st-preloader');
+            if (preloader) preloader.style.display = 'none';
+        };
+    </script>
+</body>
+</html> 
